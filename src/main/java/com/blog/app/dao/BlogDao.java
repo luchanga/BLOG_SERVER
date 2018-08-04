@@ -9,4 +9,7 @@ public interface BlogDao extends CrudRepository<Blog, String> {
 
     // 查询博客
     public List<Blog> findAll();
+
+    //
+    public void deleteBlogById(String id);
 }

@@ -8,4 +8,10 @@ public interface BlogService {
 
     // 查询博客
     public List<Blog> getAllBlog();
+
+    // 保存
+    public Blog saveBlog(Blog blog);
+
+    // 删除
+    public void deleteBlogById(String id);
 }

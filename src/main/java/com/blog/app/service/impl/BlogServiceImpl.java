@@ -23,4 +23,19 @@ public class BlogServiceImpl implements BlogService {
         return null;
     }
 
+    @Override
+    public Blog saveBlog(Blog blog) {
+        if(blogDao != null) {
+            blogDao.save(blog);
+        }
+        return blog;
+    }
+
+    @Override
+    public void deleteBlogById(String id) {
+        if(blogDao != null) {
+            blogDao.deleteBlogById(id);
+        }
+    }
+
 }
