@@ -12,4 +12,5 @@ public interface BlogDao extends CrudRepository<Blog, String> {
 
     //
     public void deleteBlogById(String id);
+
 }

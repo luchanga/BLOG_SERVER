@@ -50,7 +50,7 @@ public class BlogController {
     }
 
     // 删除博客
-    @RequestMapping(value = "/deleteBlog", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteBlog", method = RequestMethod.GET)
     public
     @ResponseBody
     ResponseObject deleteBlog(@RequestParam("id") String id) {
