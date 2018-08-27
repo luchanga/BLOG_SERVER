@@ -8,6 +8,7 @@ import com.blog.util.TokenUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Calendar;
 import java.util.Date;
@@ -32,6 +33,8 @@ public class LoginController {
                 Date expiry = getExpiryDate(Global.TOKEN_EXPIRE_TIME);
                 String jwtString = TokenUtil.getJWTString(userName, expiry, null);
                 res.setHeader("Authorization", jwtString);
+                Cookie cookie = new Cookie("token", jwtString);
+                res.addCookie(cookie);
                 return blogger;
             } else {
                 throw new Exception("account error");
