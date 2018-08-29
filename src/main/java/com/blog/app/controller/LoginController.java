@@ -33,8 +33,6 @@ public class LoginController {
                 Date expiry = getExpiryDate(Global.TOKEN_EXPIRE_TIME);
                 String jwtString = TokenUtil.getJWTString(userName, expiry, null);
                 res.setHeader("Authorization", jwtString);
-                Cookie cookie = new Cookie("token", jwtString);
-                res.addCookie(cookie);
                 return blogger;
             } else {
                 throw new Exception("account error");
