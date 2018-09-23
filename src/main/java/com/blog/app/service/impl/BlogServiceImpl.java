@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -38,4 +39,18 @@ public class BlogServiceImpl implements BlogService {
         }
     }
 
+    @Override
+    public List<Blog> findBlogByTitleLike(String title){
+        if(blogDao != null) {
+            List<Blog> blogs = new ArrayList<Blog>();
+            if(title != ""){
+                title = "%" + title + "%";
+                blogs =  blogDao.findBlogByTitleLike(title);
+            } else {
+                blogs = blogDao.findAll();
+            }
+            return blogs;
+        }
+        return null;
+    };
 }

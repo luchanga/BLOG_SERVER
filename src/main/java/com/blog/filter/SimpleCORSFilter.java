@@ -22,6 +22,7 @@ public class SimpleCORSFilter implements Filter {
         response.setHeader("Access-Control-Allow-Methods","GET,POST,DELETE,UPDATE");
         response.setHeader("Access-Control-Max-Age","3600");
         response.setHeader("Access-Control-Allow-Headers","x-requested-with,Content-type,Authorization");
+        response.setHeader("Access-Control-Expose-Headers", "Authorization");
         System.out.println("进入过滤器");
         chain.doFilter(req, res);
     }

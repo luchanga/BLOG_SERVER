@@ -14,4 +14,7 @@ public interface BlogService {
 
     // 删除
     public void deleteBlogById(String id);
+
+    // 模糊查询
+    public List<Blog> findBlogByTitleLike(String title);
 }

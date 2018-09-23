@@ -33,7 +33,7 @@ public class TokenAuthenticationFilter implements Filter {
 
         // 获取请求路径
         String requestUri = request.getRequestURI();
-        if(!requestUri.contains(loginUri)){
+        if(!requestUri.equals(loginUri)){
             if(token == null || !TokenUtil.isValid(token)){
                 return;
             } else {

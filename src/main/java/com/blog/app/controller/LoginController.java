@@ -43,6 +43,17 @@ public class LoginController {
         return null;
     }
 
+    @RequestMapping(value = "/isLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public boolean isLogin () {
+        try{
+            return true;
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return false;
+    }
+
     private Date getExpiryDate(int days) {
         // 根据当前日期，来得到到期时间
         Calendar calendar = Calendar.getInstance();

@@ -64,4 +64,18 @@ public class BlogController {
         }
         return object;
     }
+
+    @RequestMapping(value = "/findBlogByTitleLike", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    List<Blog> findBlogByTitleLike(@RequestParam("title") String title){
+        List<Blog> blogs = new ArrayList<Blog>();
+        try {
+            blogs = blogService.findBlogByTitleLike(title);
+        } catch (Exception e){
+            logger.error("查询失败！", e);
+        }
+        return blogs;
+    }
+
 }
